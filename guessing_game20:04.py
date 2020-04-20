@@ -30,31 +30,46 @@ Psuedo-code Hints
     ( You can add more features/enhancements if you'd like to. )
 """
     # write your code inside this function.
-guess = random.randint(1,11)
+guess = random.randint(1,10)
+print("-"* 50) 
+print("Welcome to the number guessing Game!!! ")
+print("-"* 50)
+print("Ready to play: ")
 
 
 def start_game():
-    print("-"* 50) 
-    print("Welcome to the number guessing Game!!! ")
-    print("-"* 50)
-    print("Ready to play: ")
+    
     ran_number = 0
     num_count = 0
-    while ran_number != guess:
-        ran_number = int(input("Type a number between 1 and 10: "))
-        num_count += 1
-        if ran_number > guess:
-            print("Sorry, It's lower")
+    
+    
+    try:
+        while ran_number != guess:
+            ran_number = int(input("Type a number between 1 and 10: "))
+            num_count += 1
             
-        elif ran_number < guess:
-            print("Sorry,It's higher ")
+            if ran_number > guess:
+                print("Sorry, It's lower")
+                
+            elif ran_number < guess:
+                print("Sorry,It's higher ")
+                
+                
+            else:
+                print("Congs You have got it")
+                print("It took you {} tries \n".format(num_count))
+                print("Thank you for playing with us!!!!! \n")
+                print("*"* 20) 
+                print("END OF GAME...")
+                print("*"* 20) 
+                
+                
+        
+    except Exception:
+            print("Sorry Can you please enter a figure number like 1 " )
+            start_game()
             
-            
-        else:
-            print("Congs You have got")
-            print("It took you {} tries".format(num_count))
-            print("Could like to Play again: ")
-            
+    
 
 #if __name__ == '__main__':
     # Kick off the program by calling the start_game function.
